@@ -10,7 +10,7 @@ RF24 radio(9,10);
 const uint64_t pipe = 0xE8E8F0F0E1LL;
 // const int requestPin = 4;
 
-const int numChars = 1024;
+const int numChars = 1024; // zou mogelijk kleiner kunnen
 char receivedChars [numChars]; // buffer met de data, moet nog opgesplits worden in 32byte data sets + frame nummers
 boolean newData = false;
 
@@ -80,7 +80,7 @@ void showNewData() {
 
     
       
-  //radio.write( ); // moet receivedChars versturen
+  //radio.write( ); // moet receivedChars gaan versturen 
 
   
   // radio.powerDown(); 
