@@ -8,9 +8,10 @@ AltSoftSerial altSerial;
 
 RF24 radio(9,10);
 const uint64_t pipe = 0xE8E8F0F0E1LL;
+// const int requestPin = 4;
 
-const int numChars = 2000;
-char receivedChars [numChars]; // buffer met de data
+const int numChars = 1024;
+char receivedChars [numChars]; // buffer met de data, moet nog opgesplits worden in 32byte data sets + frame nummers
 boolean newData = false;
 
 
@@ -26,6 +27,7 @@ void setup() {
 void loop(){
     recvWithStartEndMarkers();
     showNewData();
+      // const uint8_t i;
    }
 
 void recvWithStartEndMarkers() {
@@ -71,17 +73,20 @@ void recvWithStartEndMarkers() {
 }
 
 void showNewData() {
+   //  const uint8_t i;
   if (newData == true) {
    Serial.print(receivedChars);
+
+
+    
       
   //radio.write( ); // moet receivedChars versturen
 
-// nrf powercycle
-
+  
   // radio.powerDown(); 
   // delay(200000);
   // radio.powerUp();
 
-    newData = false; // activering als de data verstuurd is
+    newData = false; // activeren als de data verstuurd is
   }
 } 
