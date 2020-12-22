@@ -3,8 +3,8 @@ DWZ GPX from groene energie based in Arnhem.
 
 A Dwz GPX idea.
 
-serial_read is de lezende en versturende kant van de set.
-serial_receive is de ontvangende kant van de set.
+serial_read is the reading and sending part of the set.
+serial_receive is the receiving end of the set.
 
 project in progress
 
